@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FURZI | Premium Fashion Deals</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900">
+
+<!-- ================= NAVBAR ================= -->
+<header class="sticky top-0 bg-white shadow-sm z-50">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <h1 class="text-2xl font-bold tracking-widest">FURZI</h1>
+
+    <!-- Navigation Links -->
+    <nav class="hidden md:flex space-x-8 font-medium">
+      <a href="#" class="hover:text-black text-gray-600">Men</a>
+      <a href="#" class="hover:text-black text-gray-600">Women</a>
+      <a href="#" class="hover:text-black text-gray-600">Trending</a>
+    </nav>
+
+    <!-- Mobile Menu Icon -->
+    <div class="md:hidden">
+      <button class="text-gray-700">
+        ☰
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<!-- ================= HERO SECTION ================= -->
+<section class="relative bg-gray-100">
+  <div class="max-w-7xl mx-auto px-4 py-20 text-center">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+      Pinterest Trending Fashion 🔥
+    </h2>
+    <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+      Discover viral outfits and aesthetic fashion finds curated specially for you.
+    </p>
+    <a href="#products" class="bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 transition">
+      Explore Now
+    </a>
+  </div>
+</section>
+
+
+<!-- ================= FILTER SECTION ================= -->
+<section class="max-w-7xl mx-auto px-4 py-8">
+  <div class="flex flex-wrap gap-4 justify-between items-center">
+
+    <div class="flex gap-4 flex-wrap">
+      <select class="border px-4 py-2 rounded-md">
+        <option>Category</option>
+        <option>Men</option>
+        <option>Women</option>
+      </select>
+
+      <select class="border px-4 py-2 rounded-md">
+        <option>Sort by Price</option>
+        <option>Low to High</option>
+        <option>High to Low</option>
+      </select>
+
+      <select class="border px-4 py-2 rounded-md">
+        <option>Popularity</option>
+        <option>Trending</option>
+        <option>Best Seller</option>
+      </select>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= PRODUCT GRID ================= -->
+<section id="products" class="max-w-7xl mx-auto px-4 pb-16">
+
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+    <!-- PRODUCT CARD START -->
+    <div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+
+      <!-- Image -->
+      <div class="relative">
+        <img src="https://source.unsplash.com/500x600/?fashion,men"
+             class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
+
+        <!-- Discount Badge -->
+        <span class="absolute top-3 left-3 bg-red-600 text-white text-xs px-3 py-1 rounded-full">
+          60% OFF
+        </span>
+      </div>
+
+      <!-- Product Info -->
+      <div class="p-4">
+        <h3 class="font-semibold text-sm mb-2">
+          Premium Casual Shirt
+        </h3>
+
+        <p class="text-gray-600 mb-3">
+          ₹799 <span class="line-through text-sm text-gray-400">₹1999</span>
+        </p>
+
+        <!-- AMAZON AFFILIATE LINK HERE -->
+        <a href="PASTE_YOUR_AMAZON_AFFILIATE_LINK_HERE"
+           target="_blank"
+           class="block text-center bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">
+          View Deal
+        </a>
+
+      </div>
+    </div>
+    <!-- PRODUCT CARD END -->
+
+
+    <!-- COPY THIS PRODUCT CARD BLOCK TO ADD MORE PRODUCTS -->
+
+
+    <!-- PRODUCT 2 -->
+    <div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+      <div class="relative">
+        <img src="https://source.unsplash.com/500x600/?fashion,women"
+             class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
+        <span class="absolute top-3 left-3 bg-red-600 text-white text-xs px-3 py-1 rounded-full">
+          50% OFF
+        </span>
+      </div>
+      <div class="p-4">
+        <h3 class="font-semibold text-sm mb-2">
+          Aesthetic Summer Dress
+        </h3>
+        <p class="text-gray-600 mb-3">
+          ₹999 <span class="line-through text-sm text-gray-400">₹2499</span>
+        </p>
+
+        <!-- AMAZON AFFILIATE LINK HERE -->
+        <a href="PASTE_YOUR_AMAZON_AFFILIATE_LINK_HERE"
+           target="_blank"
+           class="block text-center bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">
+          Buy on Amazon
+        </a>
+      </div>
+    </div>
+
+
+    <!-- PRODUCT 3 -->
+    <div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+      <div class="relative">
+        <img src="https://source.unsplash.com/500x600/?jacket,fashion"
+             class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
+        <span class="absolute top-3 left-3 bg-red-600 text-white text-xs px-3 py-1 rounded-full">
+          40% OFF
+        </span>
+      </div>
+      <div class="p-4">
+        <h3 class="font-semibold text-sm mb-2">
+          Streetwear Denim Jacket
+        </h3>
+        <p class="text-gray-600 mb-3">
+          ₹1499 <span class="line-through text-sm text-gray-400">₹2999</span>
+        </p>
+
+        <!-- AMAZON AFFILIATE LINK HERE -->
+        <a href="PASTE_YOUR_AMAZON_AFFILIATE_LINK_HERE"
+           target="_blank"
+           class="block text-center bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">
+          View Deal
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-gray-100 py-8 text-center text-gray-600 text-sm">
+  © 2026 FURZI. This page contains affiliate links. We may earn commission.
+</footer>
+
+
+</body>
+          </html>
