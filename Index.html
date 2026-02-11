@@ -12,6 +12,18 @@
     body {
       font-family: 'Inter', sans-serif;
     }
+    
+    .mobile-menu {
+      display: none;
+    }
+    
+    .mobile-menu.active {
+      display: block;
+    }
+    
+    .product-card.hidden {
+      display: none;
+    }
   </style>
 </head>
 
@@ -19,24 +31,32 @@
 
 <!-- ================= NAVBAR ================= -->
 <header class="sticky top-0 bg-white shadow-sm z-50">
-  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-    
-    <!-- Logo -->
-    <h1 class="text-2xl font-bold tracking-widest">FURZI</h1>
+  <div class="max-w-7xl mx-auto px-4 py-4">
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <h1 class="text-2xl font-bold tracking-widest">FURZI</h1>
 
-    <!-- Navigation Links -->
-    <nav class="hidden md:flex space-x-8 font-medium">
-      <a href="#" class="hover:text-black text-gray-600">Men</a>
-      <a href="#" class="hover:text-black text-gray-600">Women</a>
-      <a href="#" class="hover:text-black text-gray-600">Trending</a>
-    </nav>
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex space-x-8 font-medium">
+        <a href="#" class="hover:text-black text-gray-600" data-category="men">Men</a>
+        <a href="#" class="hover:text-black text-gray-600" data-category="women">Women</a>
+        <a href="#" class="hover:text-black text-gray-600" data-category="all">Trending</a>
+      </nav>
 
-    <!-- Mobile Menu Icon -->
-    <div class="md:hidden">
-      <button class="text-gray-700">
-        ☰
-      </button>
+      <!-- Mobile Menu Icon -->
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="text-gray-700 text-2xl">
+          ☰
+        </button>
+      </div>
     </div>
+    
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="mobile-menu md:hidden mt-4 pb-4">
+      <a href="#" class="block py-2 hover:text-black text-gray-600" data-category="men">Men</a>
+      <a href="#" class="block py-2 hover:text-black text-gray-600" data-category="women">Women</a>
+      <a href="#" class="block py-2 hover:text-black text-gray-600" data-category="all">Trending</a>
+    </nav>
   </div>
 </header>
 
@@ -62,22 +82,22 @@
   <div class="flex flex-wrap gap-4 justify-between items-center">
 
     <div class="flex gap-4 flex-wrap">
-      <select class="border px-4 py-2 rounded-md">
-        <option>Category</option>
-        <option>Men</option>
-        <option>Women</option>
+      <select id="category-filter" class="border px-4 py-2 rounded-md">
+        <option value="all">All Categories</option>
+        <option value="men">Men</option>
+        <option value="women">Women</option>
       </select>
 
-      <select class="border px-4 py-2 rounded-md">
-        <option>Sort by Price</option>
-        <option>Low to High</option>
-        <option>High to Low</option>
+      <select id="price-filter" class="border px-4 py-2 rounded-md">
+        <option value="">Sort by Price</option>
+        <option value="low-high">Low to High</option>
+        <option value="high-low">High to Low</option>
       </select>
 
-      <select class="border px-4 py-2 rounded-md">
-        <option>Popularity</option>
-        <option>Trending</option>
-        <option>Best Seller</option>
+      <select id="popularity-filter" class="border px-4 py-2 rounded-md">
+        <option value="">Popularity</option>
+        <option value="trending">Trending</option>
+        <option value="bestseller">Best Seller</option>
       </select>
     </div>
 
@@ -91,7 +111,7 @@
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
     <!-- PRODUCT CARD START -->
-    <div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+    <div class="product-card group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300" data-category="men" data-price="799" data-popularity="trending">
 
       <!-- Image -->
       <div class="relative">
@@ -114,8 +134,8 @@
           ₹799 <span class="line-through text-sm text-gray-400">₹1999</span>
         </p>
 
-        <!-- AMAZON AFFILIATE LINK HERE -->
-        <a href="PASTE_YOUR_AMAZON_AFFILIATE_LINK_HERE"
+        <!-- AMAZON AFFILIATE LINK -->
+        <a href="https://www.amazon.in/dp/B0EXAMPLE1"
            target="_blank"
            class="block text-center bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">
           View Deal
@@ -130,7 +150,7 @@
 
 
     <!-- PRODUCT 2 -->
-    <div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+    <div class="product-card group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300" data-category="women" data-price="999" data-popularity="bestseller">
       <div class="relative">
         <img src="https://source.unsplash.com/500x600/?fashion,women"
              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
@@ -146,8 +166,8 @@
           ₹999 <span class="line-through text-sm text-gray-400">₹2499</span>
         </p>
 
-        <!-- AMAZON AFFILIATE LINK HERE -->
-        <a href="PASTE_YOUR_AMAZON_AFFILIATE_LINK_HERE"
+        <!-- AMAZON AFFILIATE LINK -->
+        <a href="https://www.amazon.in/dp/B0EXAMPLE2"
            target="_blank"
            class="block text-center bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">
           Buy on Amazon
@@ -157,7 +177,7 @@
 
 
     <!-- PRODUCT 3 -->
-    <div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+    <div class="product-card group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300" data-category="men" data-price="1499" data-popularity="trending">
       <div class="relative">
         <img src="https://source.unsplash.com/500x600/?jacket,fashion"
              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
@@ -173,8 +193,8 @@
           ₹1499 <span class="line-through text-sm text-gray-400">₹2999</span>
         </p>
 
-        <!-- AMAZON AFFILIATE LINK HERE -->
-        <a href="PASTE_YOUR_AMAZON_AFFILIATE_LINK_HERE"
+        <!-- AMAZON AFFILIATE LINK -->
+        <a href="https://www.amazon.in/dp/B0EXAMPLE3"
            target="_blank"
            class="block text-center bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">
           View Deal
@@ -191,6 +211,100 @@
   © 2026 FURZI. This page contains affiliate links. We may earn commission.
 </footer>
 
+<script>
+  // Mobile Menu Toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  mobileMenuBtn.addEventListener('click', function() {
+    mobileMenu.classList.toggle('active');
+  });
+
+  // Category Filter
+  const categoryFilter = document.getElementById('category-filter');
+  const priceFilter = document.getElementById('price-filter');
+  const popularityFilter = document.getElementById('popularity-filter');
+  const productCards = document.querySelectorAll('.product-card');
+
+  function filterProducts() {
+    const selectedCategory = categoryFilter.value;
+    const selectedPrice = priceFilter.value;
+    const selectedPopularity = popularityFilter.value;
+
+    // Convert to array for sorting
+    let visibleProducts = Array.from(productCards);
+
+    // Filter by category and popularity
+    visibleProducts.forEach(card => {
+      const category = card.getAttribute('data-category');
+      const popularity = card.getAttribute('data-popularity');
+      
+      let showCard = true;
+
+      // Category filter
+      if (selectedCategory !== 'all' && category !== selectedCategory) {
+        showCard = false;
+      }
+
+      // Popularity filter
+      if (selectedPopularity && popularity !== selectedPopularity) {
+        showCard = false;
+      }
+
+      // Use CSS class instead of direct style manipulation
+      if (showCard) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    // Price sorting
+    if (selectedPrice) {
+      const productsContainer = document.querySelector('#products .grid');
+      // Filter based on CSS class instead of style property
+      visibleProducts = visibleProducts.filter(card => !card.classList.contains('hidden'));
+      
+      visibleProducts.sort((a, b) => {
+        const priceA = parseInt(a.getAttribute('data-price'));
+        const priceB = parseInt(b.getAttribute('data-price'));
+        
+        if (selectedPrice === 'low-high') {
+          return priceA - priceB;
+        } else if (selectedPrice === 'high-low') {
+          return priceB - priceA;
+        }
+        return 0;
+      });
+
+      // Re-append in sorted order
+      visibleProducts.forEach(card => {
+        productsContainer.appendChild(card);
+      });
+    }
+  }
+
+  // Add event listeners to filters
+  categoryFilter.addEventListener('change', filterProducts);
+  priceFilter.addEventListener('change', filterProducts);
+  popularityFilter.addEventListener('change', filterProducts);
+
+  // Navigation category links
+  document.querySelectorAll('nav a[data-category]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const category = this.getAttribute('data-category');
+      categoryFilter.value = category;
+      filterProducts();
+      
+      // Close mobile menu if open
+      mobileMenu.classList.remove('active');
+      
+      // Scroll to products
+      document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
 
 </body>
-          </html>
+</html>
