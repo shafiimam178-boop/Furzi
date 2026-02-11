@@ -20,6 +20,10 @@
     .mobile-menu.active {
       display: block;
     }
+    
+    .product-card.hidden {
+      display: none;
+    }
   </style>
 </head>
 
@@ -230,7 +234,7 @@
     // Convert to array for sorting
     let visibleProducts = Array.from(productCards);
 
-    // Filter by category
+    // Filter by category and popularity
     visibleProducts.forEach(card => {
       const category = card.getAttribute('data-category');
       const popularity = card.getAttribute('data-popularity');
@@ -247,17 +251,19 @@
         showCard = false;
       }
 
+      // Use CSS class instead of direct style manipulation
       if (showCard) {
-        card.style.display = 'block';
+        card.classList.remove('hidden');
       } else {
-        card.style.display = 'none';
+        card.classList.add('hidden');
       }
     });
 
     // Price sorting
     if (selectedPrice) {
       const productsContainer = document.querySelector('#products .grid');
-      visibleProducts = visibleProducts.filter(card => card.style.display !== 'none');
+      // Filter based on CSS class instead of style property
+      visibleProducts = visibleProducts.filter(card => !card.classList.contains('hidden'));
       
       visibleProducts.sort((a, b) => {
         const priceA = parseInt(a.getAttribute('data-price'));
