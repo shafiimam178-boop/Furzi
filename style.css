@@ -1,13 +1,13 @@
 .hero {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url('banner.png');
+              url('bannerpng.png');
   background-size: cover;
   background-position: center;
   color: white;
 }
 .hero {
   background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-              url('images/banner.jpg');
+              url(''bannerpng.png);
   background-size: cover;
   background-position: center;
 }
